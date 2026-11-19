@@ -2,8 +2,9 @@
   languages.python = {
     enable = true;
     version = "3.12";
-    poetry.enable = true;
-    poetry.activate.enable = true;
+    uv.enable = true;
+    uv.sync.enable = true;
+    venv.enable = true;
   };
 
   git-hooks.hooks.check-case-conflicts.enable = true;
