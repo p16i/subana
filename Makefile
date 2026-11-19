@@ -39,6 +39,18 @@ publish: ## publish a release to pypi.
 .PHONY: build-and-publish
 build-and-publish: build publish ## Build and publish.
 
+.PHONY: tag
+tag: ## Create an annotated git tag v<version> from pyproject.toml (push with: git push origin v<version>)
+	@VERSION=$$(uv version --short) && TAG="v$$VERSION" && \
+	if git rev-parse -q --verify "refs/tags/$$TAG" >/dev/null; then \
+		echo "❌ Tag $$TAG already exists"; exit 1; \
+	fi && \
+	if ! git diff --quiet HEAD -- pyproject.toml uv.lock; then \
+		echo "❌ pyproject.toml or uv.lock has uncommitted changes; commit the version bump first"; exit 1; \
+	fi && \
+	git tag -a "$$TAG" -m "Release $$TAG" && \
+	echo "🏷️  Created tag $$TAG. Push it with: git push origin $$TAG"
+
 .PHONY: docs-test
 docs-test: ## Test if documentation can be built without warnings or errors
 	@uv run mkdocs build -s
