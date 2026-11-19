@@ -1,6 +1,6 @@
 [project]
 name = "subana"
-version = "0.0.3"
+version = "0.0.4"
 description = "Neural subspace analysis."
 authors = [{ name = "Pat Chormai", email = "pat.chormai@gmail.com" }]
 readme = "README.md"

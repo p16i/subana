@@ -3254,7 +3254,7 @@ wheels = [
 
 [[package]]
 name = "subana"
-version = "0.0.3"
+version = "0.0.4"
 source = { editable = "." }
 default-groups = ["dev", "docs"]
 dependencies = [
