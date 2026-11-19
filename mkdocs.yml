@@ -1,7 +1,7 @@
 site_name: neural-subspace-analysis
 repo_url: https://github.com/p16i/neural-subspace-analysis
 site_url: https://p16i.github.io/neural-subspace-analysis
-site_description: This is a template repository for Python projects that use Poetry for their dependency management.
+site_description: Neural subspace analysis.
 site_author: Pat Chormai
 edit_uri: edit/main/docs/
 repo_name: p16i/neural-subspace-analysis

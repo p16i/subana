@@ -45,7 +45,7 @@ If you are proposing a new feature:
 # Get Started!
 
 Ready to contribute? Here's how to set up `neural-subspace-analysis` for local development.
-Please note this documentation assumes you already have `poetry` and `Git` installed and ready to go.
+Please note this documentation assumes you already have [`uv`](https://docs.astral.sh/uv/) and `Git` installed and ready to go.
 
 1. Fork the `neural-subspace-analysis` repo on GitHub.
 
@@ -62,23 +62,18 @@ git clone git@github.com:YOUR_NAME/neural-subspace-analysis.git
 cd neural-subspace-analysis
 ```
 
-If you are using `pyenv`, select a version to use locally. (See installed versions with `pyenv versions`)
+Then, install the environment with:
 
 ```bash
-pyenv local <x.y.z>
+uv sync
 ```
 
-Then, install and activate the environment with:
-
-```bash
-poetry install
-poetry shell
-```
+Run commands inside the environment with `uv run <command>`, or activate it with `source .venv/bin/activate`.
 
 4. Install pre-commit to run linters/formatters at commit time:
 
 ```bash
-poetry run pre-commit install
+uv run pre-commit install
 ```
 
 5. Create a branch for local development:
